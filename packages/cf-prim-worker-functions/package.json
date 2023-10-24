@@ -1,0 +1,32 @@
+{
+  "name": "cf-prim-worker-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsup --config build.config.js",
+    "check": "pnpm run lint && tsc --noEmit && pnpm run build",
+    "dev": "tsup --watch --config build.config.js",
+    "lint": "eslint . --ext .ts",
+    "start": "pnpm dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230419.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
+}

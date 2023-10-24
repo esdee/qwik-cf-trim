@@ -1,0 +1,25 @@
+{
+  "name": "cf-prim-worker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit",
+    "check": "pnpm run lint && pnpm run build",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --port 8787",
+    "lint": "eslint . --ext .ts",
+    "start": "wrangler dev --port 8787"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230419.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.0.4",
+    "wrangler": "^3.14.0"
+  },
+  "dependencies": {
+    "@doseofted/prim-rpc": "0.1.0-alpha.18",
+    "@doseofted/prim-rpc-plugins": "0.1.0-alpha.20",
+    "hono": "^3.8.3"
+  }
+}
